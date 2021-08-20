@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@800&display=swap");
+
+.intro-container {
+  padding: 5px;
+  position: relative;
+}
+
+.banner-img-sm {
+  width: 100%;
+  align-self: flex-end;
+  max-width: 350px;
+}
+
+.banner-img-md {
+  display: none;
+}
+
+.heading-img-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 749px) {
+  .banner-heading {
+    position: absolute;
+    bottom: -15px;
+    left: 15px;
+    font-size: 30px;
+    font-weight: 700;
+    max-width: 275px;
+    line-height: 40px;
+    color: #3c4852;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .intro-container {
+    background-image: none;
+    animation: showGradient 1s 0.65s ease forwards;
+  }
+  @keyframes showGradient {
+    from {
+      background: none;
+    }
+    to {
+      background-image: linear-gradient(to left, white, transparent 10%);
+    }
+  }
+  .banner-img-sm {
+    display: none;
+  }
+  .banner-img-md {
+    position: absolute;
+    display: block;
+    max-width: 750px;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    animation: fadeInImg 1s 0.3s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInImg {
+    from {
+      opacity: 0;
+      right: -100px;
+    }
+    to {
+      opacity: 1;
+      right: 0;
+    }
+  }
+
+  .banner-heading {
+    position: relative;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    max-width: 350px;
+    margin-left: 100px;
+    margin-top: 50px;
+    color: #3c4852;
+    font-size: 37px;
+    opacity: 0;
+    animation: fadeInTxt 1s 0.3s ease forwards;
+  }
+
+  @keyframes fadeInTxt {
+    from {
+      opacity: 0;
+      left: -100px;
+    }
+    to {
+      opacity: 1;
+      left: 0;
+    }
+  }
+
+  .intro-container {
+    width: 750px;
+  }
+}
+
+@media screen and (min-width: 1152px) {
+  .intro-container {
+    width: 1152px;
+  }
+  .banner-heading {
+    margin-left: 35px;
+    font-size: 50px;
+    max-width: 435px;
+    margin-bottom: 30px;
+  }
+  .banner-img-md {
+    max-width: 1000px;
+  }
+}
